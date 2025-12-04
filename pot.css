@@ -1,0 +1,346 @@
+/* ================================================
+   GLOBAL RESET
+================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0a0f1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ================================================
+   SCROLLBAR
+================================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #00eaff;
+    border-radius: 10px;
+}
+
+/* ================================================
+   GLASS EFFECT
+================================================ */
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ================================================
+   NAVBAR
+================================================ */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #00eaff;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.theme-btn {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #00eaff;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background: #00b7d1;
+}
+
+/* ================================================
+   PRELOADER
+================================================ */
+#preloader {
+    height: 100vh;
+    width: 100%;
+    background: #02060f;
+    position: fixed;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader {
+    border: 6px solid rgba(255, 255, 255, 0.1);
+    border-top: 6px solid #00eaff;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ================================================
+   HERO SECTION
+================================================ */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 160px 60px 80px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.glow-text span {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.typewriter {
+    border-right: 3px solid #00eaff;
+    width: 24ch;
+    overflow: hidden;
+    animation: typing 4s steps(24) infinite alternate;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 24ch; }
+}
+
+.hero-desc {
+    margin: 20px 0;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.glow-btn {
+    background: #00eaff;
+    color: #000;
+}
+
+.outline-btn {
+    border: 2px solid #00eaff;
+    color: #00eaff;
+    background: transparent;
+}
+
+/* HERO IMAGE */
+.hero-image img {
+    width: 350px;
+    filter: drop-shadow(0 0 15px #00eaff);
+    animation: float 5s infinite ease-in-out;
+}
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* Grid Overlay */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("assets/neon-grid.png");
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* ================================================
+   ABOUT SECTION
+================================================ */
+.section {
+    padding: 120px 60px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #00eaff;
+}
+
+.about-content {
+    display: flex;
+    gap: 50px;
+}
+
+.about-image img {
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* About Cards */
+.about-cards {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.info-card {
+    padding: 18px 26px;
+    border-radius: 12px;
+    border: 1px solid #00eaff55;
+    text-align: center;
+}
+
+/* ================================================
+   SKILLS SECTION
+================================================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+.skill-card {
+    background: #0d1626;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    border: 2px solid #00eaff;
+    transform: translateY(-5px);
+}
+
+/* ================================================
+   PROJECTS SECTION
+================================================ */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    padding: 30px;
+    border-radius: 16px;
+    transition: 0.4s;
+    border: 1px solid #00eaff55;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    border-color: #00eaff;
+}
+
+.btn-sm {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #00eaff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* ================================================
+   CONTACT
+================================================ */
+.contact-form {
+    max-width: 550px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00eaff55;
+    background: transparent;
+    color: #fff;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+/* ================================================
+   FOOTER
+================================================ */
+.footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #00eaff55;
+}
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+@media (max-width: 991px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content { max-width: 100%; }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
